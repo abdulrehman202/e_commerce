@@ -27,11 +27,6 @@ class _SplashViewState extends State<SplashView> {
           Container(
               width: MediaQuery.of(context).size.width * 0.2,
               color: ColorManager.purple),
-          Expanded(
-            child: Container(
-              color: ColorManager.white,
-            ),
-          ),
         ])),
       ]),
       LoginForm(),

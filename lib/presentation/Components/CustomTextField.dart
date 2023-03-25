@@ -23,7 +23,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(5.0)),
+        borderRadius: BorderRadius.all(Radius.circular(8.0)),
         color: Color.fromARGB(255, 214, 214, 214),
       ),
       margin: const EdgeInsets.symmetric(vertical: AppMargin.m8),
