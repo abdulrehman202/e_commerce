@@ -1,4 +1,5 @@
 import 'package:e_commerce/presentation/Components/CustomTextField.dart';
+import 'package:e_commerce/presentation/Components/YellowButton.dart';
 import 'package:e_commerce/presentation/resources/color_manager.dart';
 import 'package:e_commerce/presentation/resources/strings_manager.dart';
 import 'package:e_commerce/presentation/resources/values_manager.dart';
@@ -56,13 +57,9 @@ class _LoginFormState extends State<LoginForm> {
                   builder: (BuildContext context, BoxConstraints constraints) {
                 return SizedBox(
                   width: constraints.maxWidth,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: ColorManager.yellow,
-                      shape: const StadiumBorder(),
-                    ),
-                    child: const Text(AppStrings.login),
+                  child: YellowButton(
+                    callback: () {},
+                    text: AppStrings.login,
                   ),
                 );
               }),
