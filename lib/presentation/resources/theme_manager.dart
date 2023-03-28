@@ -35,12 +35,9 @@ ThemeData getApplicationTheme() {
     )),
     //Text theme
     textTheme: TextTheme(
-      headline1:
-          getBoldStyle(color: ColorManager.darkGrey, fontSize: FontSize.s16),
-      subtitle1:
-          getMediumStyle(color: ColorManager.lightGrey, fontSize: FontSize.s14),
-      caption: getRegularStyle(color: ColorManager.grey1),
-      bodyText1: getRegularStyle(color: ColorManager.grey),
+      titleLarge: getBoldStyle(color: Colors.black, fontSize: FontSize.s16),
+      labelMedium:
+          getBoldStyle(color: ColorManager.purple, fontSize: FontSize.s14),
     ),
     //input decoration theme(text form field)
     inputDecorationTheme: InputDecorationTheme(
