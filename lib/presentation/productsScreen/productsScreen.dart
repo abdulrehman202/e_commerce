@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce/presentation/Components/CategoryWidget.dart';
+import 'package:e_commerce/presentation/Components/ProductListing.dart';
 import 'package:e_commerce/presentation/resources/strings_manager.dart';
 import 'package:e_commerce/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,14 @@ class ProductsScreen extends StatefulWidget {
 
 class _ProductsScreenState extends State<ProductsScreen> {
   List<String> imgList = [
+    'https://img.freepik.com/premium-photo/living-room-interior-wall-dark-tones-with-leather-armchair-black-wooden-wall-3d-rendering_41470-3595.jpg?w=740',
+    'https://img.freepik.com/premium-photo/living-room-interior-wall-dark-tones-with-leather-armchair-black-wooden-wall-3d-rendering_41470-3595.jpg?w=740',
+    'https://img.freepik.com/premium-photo/living-room-interior-wall-dark-tones-with-leather-armchair-black-wooden-wall-3d-rendering_41470-3595.jpg?w=740',
+    'https://img.freepik.com/premium-photo/living-room-interior-wall-dark-tones-with-leather-armchair-black-wooden-wall-3d-rendering_41470-3595.jpg?w=740',
+    'https://img.freepik.com/premium-photo/living-room-interior-wall-dark-tones-with-leather-armchair-black-wooden-wall-3d-rendering_41470-3595.jpg?w=740',
+  ];
+
+  List<String> itemsList = [
     'https://img.freepik.com/premium-photo/living-room-interior-wall-dark-tones-with-leather-armchair-black-wooden-wall-3d-rendering_41470-3595.jpg?w=740',
     'https://img.freepik.com/premium-photo/living-room-interior-wall-dark-tones-with-leather-armchair-black-wooden-wall-3d-rendering_41470-3595.jpg?w=740',
     'https://img.freepik.com/premium-photo/living-room-interior-wall-dark-tones-with-leather-armchair-black-wooden-wall-3d-rendering_41470-3595.jpg?w=740',
@@ -64,6 +73,33 @@ class _ProductsScreenState extends State<ProductsScreen> {
                     );
                   }).toList(),
                 ),
+                Padding(
+                  padding: const EdgeInsets.all(AppPadding.p20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Chairs'),
+                      Text('120 Products'),
+                    ],
+                  ),
+                ),
+                Row(
+                  children: [
+                    ProductListing(),
+                    ProductListing(),
+                  ],
+                ),
+                //       Expanded(
+                //   child: GridView.count(
+                //     shrinkWrap: true,
+                //     crossAxisCount: 2,
+                //     scrollDirection: Axis.vertical,
+                //     children: List.generate(itemsList.length, (index) {
+                //       return ProductListing(
+                //       );
+                //     }),
+                //   ),
+                // ),
               ],
             ),
           ),
