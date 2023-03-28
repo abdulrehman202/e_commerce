@@ -7,4 +7,5 @@ class AppStrings {
   static const String login = 'Login';
   static const String dontHaveAnAccountYet = 'Dont have an account yet?';
   static const String createAnAccount = 'Create an account';
+  static const String productList = 'Product List';
 }

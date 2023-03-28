@@ -1,9 +1,11 @@
+import 'package:e_commerce/presentation/productsScreen/ProductsScreen.dart';
 import 'package:e_commerce/presentation/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce/presentation/resources/strings_manager.dart';
 
 class Routes {
   static const String splashRoute = '/';
+  static const String productsScreenRoute = '/productsScreen';
 }
 
 class RouteGenerator {
@@ -11,6 +13,9 @@ class RouteGenerator {
     switch (routeSettings.name) {
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashView());
+
+      case Routes.productsScreenRoute:
+        return MaterialPageRoute(builder: (_) => const ProductsScreen());
 
       default:
         return UnDefinedRoute();

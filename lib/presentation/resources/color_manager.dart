@@ -12,8 +12,8 @@ class ColorManager {
   static Color grey2 = HexColor.frontier('#797979');
   static Color white = HexColor.frontier('#ffffff');
   static Color error = HexColor.frontier('#e61f34');
-  static Color yellow = HexColor.frontier('#FCB306');
-  static Color purple = HexColor.frontier('#6038B1');
+  static Color yellow = HexColor.frontier('#FF9501');
+  static Color purple = HexColor.frontier('#623BE2');
 }
 
 extension HexColor on Color {

@@ -1,6 +1,7 @@
 import 'package:e_commerce/presentation/Components/CustomTextField.dart';
 import 'package:e_commerce/presentation/Components/YellowButton.dart';
 import 'package:e_commerce/presentation/resources/color_manager.dart';
+import 'package:e_commerce/presentation/resources/routes_manager.dart';
 import 'package:e_commerce/presentation/resources/strings_manager.dart';
 import 'package:e_commerce/presentation/resources/values_manager.dart';
 import 'package:flutter/cupertino.dart';
@@ -57,7 +58,10 @@ class _LoginFormState extends State<LoginForm> {
               return SizedBox(
                 width: constraints.maxWidth,
                 child: YellowButton(
-                  callback: () {},
+                  callback: () {
+                    Navigator.pushReplacementNamed(
+                        context, Routes.productsScreenRoute);
+                  },
                   text: AppStrings.login,
                 ),
               );
