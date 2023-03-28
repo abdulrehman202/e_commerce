@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce/presentation/Components/CategoryWidget.dart';
 import 'package:e_commerce/presentation/resources/strings_manager.dart';
 import 'package:e_commerce/presentation/resources/values_manager.dart';
@@ -15,6 +16,14 @@ class ProductsScreen extends StatefulWidget {
 }
 
 class _ProductsScreenState extends State<ProductsScreen> {
+  List<String> imgList = [
+    'https://img.freepik.com/premium-photo/living-room-interior-wall-dark-tones-with-leather-armchair-black-wooden-wall-3d-rendering_41470-3595.jpg?w=740',
+    'https://img.freepik.com/premium-photo/living-room-interior-wall-dark-tones-with-leather-armchair-black-wooden-wall-3d-rendering_41470-3595.jpg?w=740',
+    'https://img.freepik.com/premium-photo/living-room-interior-wall-dark-tones-with-leather-armchair-black-wooden-wall-3d-rendering_41470-3595.jpg?w=740',
+    'https://img.freepik.com/premium-photo/living-room-interior-wall-dark-tones-with-leather-armchair-black-wooden-wall-3d-rendering_41470-3595.jpg?w=740',
+    'https://img.freepik.com/premium-photo/living-room-interior-wall-dark-tones-with-leather-armchair-black-wooden-wall-3d-rendering_41470-3595.jpg?w=740',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,12 +47,23 @@ class _ProductsScreenState extends State<ProductsScreen> {
             margin: const EdgeInsets.all(AppMargin.m12),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: AppSize.s100,
                 ),
                 //select category carousel
-                CategoryWidget(categoryName: 'Sofa', numberOfItems: 120),
-                //respective products
+                CarouselSlider(
+                  options: CarouselOptions(enableInfiniteScroll: false),
+                  items: imgList.map((i) {
+                    return Builder(
+                      builder: (BuildContext context) {
+                        return CategoryWidget(
+                            imgLink: i,
+                            categoryName: 'Sofa',
+                            numberOfItems: 120);
+                      },
+                    );
+                  }).toList(),
+                ),
               ],
             ),
           ),
