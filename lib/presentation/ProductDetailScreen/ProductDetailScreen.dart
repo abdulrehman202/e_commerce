@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
+import '../resources/routes_manager.dart';
+
 class ProductDetailScreen extends StatefulWidget {
   const ProductDetailScreen({super.key});
 
@@ -35,7 +37,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         padding: const EdgeInsets.all(AppPadding.p20),
         child: YellowButton(
           text: 'Add to Cart',
-          callback: () {},
+          callback: () {
+            Navigator.pushNamed(context, Routes.CartScreenRoute);
+          },
         ),
       ),
       appBar: AppBar(

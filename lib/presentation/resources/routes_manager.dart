@@ -1,3 +1,4 @@
+import 'package:e_commerce/presentation/CartScreen/CartScreen.dart';
 import 'package:e_commerce/presentation/ProductDetailScreen/ProductDetailScreen.dart';
 import 'package:e_commerce/presentation/productsScreen/ProductsScreen.dart';
 import 'package:e_commerce/presentation/splash/splash.dart';
@@ -8,6 +9,7 @@ class Routes {
   static const String splashRoute = '/';
   static const String productsScreenRoute = '/productsScreen';
   static const String productDetailScreenRoute = '/ProductDetailScreen';
+  static const String CartScreenRoute = '/CartScreen';
 }
 
 class RouteGenerator {
@@ -23,6 +25,9 @@ class RouteGenerator {
         return MaterialPageRoute(
             builder: (_) => const ProductDetailScreen(),
             settings: routeSettings);
+
+      case Routes.CartScreenRoute:
+        return MaterialPageRoute(builder: (_) => const CartScreen());
 
       default:
         return UnDefinedRoute();
