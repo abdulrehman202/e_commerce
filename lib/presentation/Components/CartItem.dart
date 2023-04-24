@@ -59,9 +59,9 @@ class CartItem extends StatelessWidget {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text('x1'),
-                  const Text('PKR 4799'),
+                children: const [
+                  Text('x1'),
+                  Text('PKR 4799'),
                 ],
               )
             ],
