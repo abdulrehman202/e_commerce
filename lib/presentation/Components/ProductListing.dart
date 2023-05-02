@@ -5,8 +5,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 class ProductListing extends StatelessWidget {
-  String imgPath;
-  ProductListing({required this.imgPath, super.key});
+  String imgPath, name;
+  ProductListing({required this.name, required this.imgPath, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class ProductListing extends StatelessWidget {
                 ),
               ),
               Text(
-                'Hanging Chair',
+                name,
                 style: TextStyle(fontSize: AppSize.s16),
               ),
               Text(
