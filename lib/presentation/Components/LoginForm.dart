@@ -10,15 +10,20 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 class LoginForm extends StatefulWidget {
-  const LoginForm({super.key});
+  late TextEditingController emailController, passwordController;
+  late VoidCallback loginCallback;
+
+  LoginForm(
+      {required this.emailController,
+      required this.passwordController,
+      required this.loginCallback,
+      super.key});
 
   @override
   State<LoginForm> createState() => _LoginFormState();
 }
 
 class _LoginFormState extends State<LoginForm> {
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
   final FocusNode _focusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
@@ -42,13 +47,13 @@ class _LoginFormState extends State<LoginForm> {
             ),
             CustomTextField(
               fieldName: AppStrings.email,
-              externalController: emailController,
+              externalController: widget.emailController,
               iconData: Icons.email_outlined,
               focusNode: _focusNode,
             ),
             CustomTextField(
               fieldName: AppStrings.password,
-              externalController: passwordController,
+              externalController: widget.passwordController,
               iconData: Icons.key_outlined,
               passwordField: true,
               focusNode: _focusNode,
@@ -58,10 +63,7 @@ class _LoginFormState extends State<LoginForm> {
               return SizedBox(
                 width: constraints.maxWidth,
                 child: YellowButton(
-                  callback: () {
-                    Navigator.pushReplacementNamed(
-                        context, Routes.productsScreenRoute);
-                  },
+                  callback: widget.loginCallback,
                   text: AppStrings.login,
                 ),
               );
