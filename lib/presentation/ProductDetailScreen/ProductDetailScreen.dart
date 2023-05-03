@@ -86,7 +86,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(30.0),
                     child: Image.network(
-                      viewObject!.item.img,
+                      viewObject.item.img,
                       fit: BoxFit.fill,
                       height: 350.0,
                     ),

@@ -1,3 +1,4 @@
+import 'package:e_commerce/presentation/CartScreen/CartScreen_ViewModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -5,8 +6,9 @@ import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../resources/values_manager.dart';
 
-class CartItem extends StatelessWidget {
-  const CartItem({super.key});
+class CartItemWidget extends StatelessWidget {
+  CartItem cartItem;
+  CartItemWidget({required this.cartItem, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class CartItem extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10.0),
             child: Image.network(
-              'https://img.freepik.com/free-photo/retro-living-room-interior-design_53876-145503.jpg?w=740&t=st=1680002125~exp=1680002725~hmac=07b10546162aea17fdab7978f87e9baea50c77c4780a1c7c5ea7e747237fc224',
+              cartItem.img,
               height: AppSize.s100,
               width: AppSize.s100,
               fit: BoxFit.fill,
@@ -40,7 +42,7 @@ class CartItem extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    'Hanging Chair',
+                    cartItem.name,
                     style: Theme.of(context).textTheme.titleSmall,
                     overflow: TextOverflow.fade,
                   ),
@@ -48,20 +50,20 @@ class CartItem extends StatelessWidget {
               ),
               Container(
                 margin: const EdgeInsets.symmetric(vertical: AppMargin.m8),
-                child: const Align(
+                child: Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      ' Color: Blue ',
-                      style: TextStyle(
+                      ' Color: ${cartItem.color}',
+                      style: const TextStyle(
                         backgroundColor: Color.fromARGB(255, 221, 221, 221),
                       ),
                     )),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Text('x1'),
-                  Text('PKR 4799'),
+                children: [
+                  Text('x${cartItem.quantity}'),
+                  Text('PKR ${cartItem.price}'),
                 ],
               )
             ],

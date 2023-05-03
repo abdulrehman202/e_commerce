@@ -6,7 +6,8 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import '../resources/values_manager.dart';
 
 class AmountsWidget extends StatelessWidget {
-  const AmountsWidget({super.key});
+  double subTotal, discount;
+  AmountsWidget({required this.subTotal, required this.discount, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +19,15 @@ class AmountsWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            getRow('Sub Total', '10999'),
-            getRow('Discount', '5999'),
-            getRow('Total', '5000'),
+            getRow('Sub Total', subTotal),
+            getRow('Discount', discount),
+            getRow('Total', subTotal - discount),
           ],
         ));
   }
 }
 
-getRow(String label, String amount) {
+getRow(String label, double amount) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
