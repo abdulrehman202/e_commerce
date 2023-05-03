@@ -15,4 +15,7 @@ class AppStrings {
 
   static const String img2 =
       'https://img.freepik.com/free-vector/wicker-hanging-chairs-swing-hanging-chain-with-cushions_1284-45541.jpg?w=740&t=st=1680002500~exp=1680003100~hmac=a33f1c9de208d82cb2ebf040be3147a15ddb79db5c4ba797f6282d2d8f0ae64a';
+
+  static const String description =
+      'nsjdfnjksdfbshfbwiufbwiufwuifgygbdhvbdyuvbgfuaywfysgfsdyhvsduyfetsyfdsudgsygfiygfuysgefyuwegfuyewgfug';
 }
