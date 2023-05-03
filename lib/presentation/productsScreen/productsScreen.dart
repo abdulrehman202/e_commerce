@@ -32,6 +32,13 @@ class _ProductsScreenState extends State<ProductsScreen> {
   }
 
   @override
+  void dispose() {
+    // TODO: implement dispose
+    _viewModel.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return StreamBuilder<ViewObject>(
       builder: (context, snapshot) {

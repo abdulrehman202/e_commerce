@@ -20,8 +20,6 @@ class ProductDetailScreen extends StatefulWidget {
 class _ProductDetailScreenState extends State<ProductDetailScreen> {
   final ProductDetailScreenViewModel _detailScreenViewModel =
       ProductDetailScreenViewModel();
-  int selectedColorIndex = -1;
-
   _bind() {
     _detailScreenViewModel.start();
   }
@@ -31,6 +29,13 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     // TODO: implement initState
     super.initState();
     _bind();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _detailScreenViewModel.dispose();
+    super.dispose();
   }
 
   @override

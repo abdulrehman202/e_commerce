@@ -14,7 +14,7 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
-  SplashViewModel _splashViewModel = SplashViewModel();
+  final SplashViewModel _splashViewModel = SplashViewModel();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
